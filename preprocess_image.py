@@ -11,7 +11,7 @@ class PreprocessImage:
                 size = (224, int(224 * height / width))
             else:
                 size = (int(224 * width / height), 224)
-            image = image.resize(size, Image.Resampling.BICUBIC)
+            image = image.resize(size, Image.BICUBIC)
             left = round((size[0] - 224) / 2)
             top = round((size[1] - 224) / 2)
             image = image.crop((left, top, left + 224, top + 224)).convert('RGB')
